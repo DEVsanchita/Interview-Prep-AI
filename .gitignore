@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Production builds
+ dist/
+ frontend/interview-prep-ai/dist/
+
+# Vite
+.vite/
+
+# Environment variables - never commit secrets
+.env
+.env.*
+
+# Backend uploads / generated files
+backend/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
