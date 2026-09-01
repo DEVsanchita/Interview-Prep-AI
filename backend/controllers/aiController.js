@@ -25,7 +25,7 @@ const generateInterviewQuestions = async (req, res) => {
     const count = Math.min(Math.max(Number(numberOfQuestions) || 10, 1), 20);
     const ai = getAI();
     const response = await ai.models.generateContent({
-      model: process.env.GEMINI_MODEL || "gemini-2.0-flash-lite",
+      model: process.env.GEMINI_MODEL || "gemini-3.5-flash-lite",
       contents: questionAnswerPrompt(role, experience, topicsToFocus, count),
     });
     const data = parseJson(response.text);
@@ -44,7 +44,7 @@ const generateConceptExplanation = async (req, res) => {
 
     const ai = getAI();
     const response = await ai.models.generateContent({
-      model: process.env.GEMINI_MODEL || "gemini-2.0-flash-lite",
+      model: process.env.GEMINI_MODEL || "gemini-3.5-flash-lite",
       contents: conceptExplainPrompt(question),
     });
     res.status(200).json(parseJson(response.text));
